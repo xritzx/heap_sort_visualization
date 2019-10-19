@@ -39,10 +39,11 @@ function heapSort(arr) {
     var ar = [...arr];
     var ar_sorted = [];
     var n = ar.length;
+    var len = n;
     maxHeapify(ar, n);
 
-    while(n) { 
-        swap(ar, 0, n-1);
+    for (var i = len - 1; i > 0; i--) { 
+        swap(ar, 0, i);
         ar_sorted.push(ar.pop());
         n--;
         heapify(ar, 0, n);
